@@ -29,13 +29,13 @@ const FirstLook = () => {
       .then(() => {
         console.log("user: success");
         localStorage.setItem("name", name);
-        setLoading(true);
+        setLoading(false);
         navigate("/main");
       })
       .catch((err) => {
         setErrMessage(err.response.data.message);
         console.error(err);
-        setLoading(true)
+        setLoading(false)
       });
   };
 
