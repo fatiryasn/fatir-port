@@ -12,6 +12,13 @@ import Comment from "../components/Comment";
 const Port = () => {
   const [isMd, setIsMd] = useState(false);
   const [menu, setMenu] = useState("ABOUT");
+  const localName = localStorage.getItem('name')
+
+  if (!localName) {
+    useEffect(() => {
+      return navigate("/");
+    }, []);
+  }
 
   useEffect(() => {
     function handleResize() {
