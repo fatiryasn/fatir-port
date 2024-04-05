@@ -25,7 +25,7 @@ const Comment = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:3000/comment", {headers: {Authorization: localName}})
+      .get("https://fatir-port-api.vercel.app/comment", {headers: {Authorization: localName}})
       .then((res) => {
         setComments(res.data);
         setCountComments(res.data.length);
@@ -50,7 +50,7 @@ const Comment = () => {
       comment,
     };
     axios
-      .post("http://localhost:3000/comment", newData)
+      .post("https://fatir-port-api.vercel.app/comment", newData)
       .then(() => {
         console.log("success");
         location.reload();
@@ -66,7 +66,7 @@ const Comment = () => {
       const idToDelete = comments[index].id;
 
       axios
-        .delete(`http://localhost:3000/comment/${idToDelete}`)
+        .delete(`https://fatir-port-api.vercel.app/comment/${idToDelete}`)
         .then(() => {
           console.log("success");
           location.reload();

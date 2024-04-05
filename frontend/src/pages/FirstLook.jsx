@@ -24,7 +24,7 @@ const FirstLook = () => {
 
   const handleRegister = () => {
     axios
-      .post("http://localhost:3000/user", { name })
+      .post("https://fatir-port-api.vercel.app/user", { name })
       .then(() => {
         console.log("user: success");
         localStorage.setItem("name", name);
