@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 //local file
 import "../global.css";
-import Head from "../components/Head"
-import Navbar from "../components/Navbar"
-import Profile from "../components/Profile"
-import MainMenu from "../components/MainMenu"
-import Datas from "../components/Datas"
-import Comment from "../components/Comment"
+import Head from "../components/Head";
+import Navbar from "../components/Navbar";
+import Profile from "../components/Profile";
+import MainMenu from "../components/MainMenu";
+import Datas from "../components/Datas";
+import Comment from "../components/Comment";
 
-const Port = ()  => {
+const Port = () => {
   const [isMd, setIsMd] = useState(false);
   const [menu, setMenu] = useState("ABOUT");
 
@@ -27,6 +28,9 @@ const Port = ()  => {
 
   return (
     <>
+      <Helmet>
+        <title>Main page | Fatir</title>
+      </Helmet>
       <Head />
 
       {isMd ? (
@@ -48,9 +52,8 @@ const Port = ()  => {
       )}
       <Datas />
       <Comment />
-
     </>
   );
-}
+};
 
 export default Port;

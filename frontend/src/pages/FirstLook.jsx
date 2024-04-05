@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, redirect } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+import {Helmet} from 'react-helmet'
 
 const FirstLook = () => {
   const [name, setName] = useState("");
@@ -43,6 +42,10 @@ const FirstLook = () => {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>your name pls.. | Fatir</title>
+    </Helmet>
     <div className=" h-[90vh] md:h-[80vh] flex flex-col justify-center items-center">
       <h1 className="text-[2.5rem] md:text-[3rem] font-raleway font-bold">
         Insert your name
@@ -82,6 +85,7 @@ const FirstLook = () => {
         GO
       </button>
     </div>
+    </>
   );
 };
 
