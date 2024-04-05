@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  background: url('./assets/bg.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.borderbg{
+  background: url('./assets/border.png');
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+::-webkit-scrollbar{
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  width: 10px;
+  background-color: rgba(0,0,0,0.05);
+  border-radius: 1.5rem;
+  transform: scaleY(0.5);
+  z-index: -1;
+}
+
+
+
+.reveal-text {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  animation: revealAnimation 1s ease-out forwards;
+}
+
+@keyframes revealAnimation {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
